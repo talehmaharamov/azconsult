@@ -10,10 +10,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => '/', 'as' => 'frontend.', 'middleware' => 'frontLanguage'], function () {
 
     Route::get('contact-us', function () {
-        $sliders = Slider::where('page', 'contact')->where('status', 1)->get();
-        $sliderTitle = settings('sliderTitleContact_' . app()->getLocale());
-        $sliderDescription = settings('sliderDescriptionContact_' . app()->getLocale());
-        return view('frontend.contact-us.index',get_defined_vars());
+        return view('frontend.contact-us.index', get_defined_vars());
     })->name('contact-us-page');
     Route::get('/change-language/{dil}', [LChangeLan::class, 'frontLanguage'])->name('frontLanguage');
     Route::get('create-order', [FHome::class, 'createOrder'])->name('createOrder');
@@ -29,9 +26,9 @@ Route::group(['prefix' => '/', 'as' => 'frontend.', 'middleware' => 'frontLangua
     Route::get('mail/test', function () {
         return view('backend.mail.send');
     });
-    Route::get('services',[App\Http\Controllers\Frontend\ServiceController::class,'index'])->name('service');
-    Route::get('services/{id}',[App\Http\Controllers\Frontend\ServiceController::class,'show'])->name('serviceSingle');
-    Route::get('blog',[App\Http\Controllers\Frontend\BlogController::class,'index'])->name('blog');
-    Route::get('blog/{id}',[App\Http\Controllers\Frontend\BlogController::class,'show'])->name('blogSingle');
+    Route::get('services', [App\Http\Controllers\Frontend\ServiceController::class, 'index'])->name('service');
+    Route::get('services/{id}', [App\Http\Controllers\Frontend\ServiceController::class, 'show'])->name('serviceSingle');
+    Route::get('blog', [App\Http\Controllers\Frontend\BlogController::class, 'index'])->name('blog');
+    Route::get('blog/{id}', [App\Http\Controllers\Frontend\BlogController::class, 'show'])->name('blogSingle');
 
 });

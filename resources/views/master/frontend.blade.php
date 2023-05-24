@@ -7,7 +7,7 @@
 <body>
     @include('frontend.includes.navbar')
     @yield('front')
-{{--    @include('frontend.includes.footer')--}}
+    @include('frontend.includes.footer')
     @include('sweetalert::alert')
     @include('frontend.includes.scripts')
 @yield('scripts')

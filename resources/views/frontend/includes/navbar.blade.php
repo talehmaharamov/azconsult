@@ -17,7 +17,7 @@
                     <div class="rightNav">
                         <div class="dropdown">
                             <button class="dropdown-toggle btn" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">{{ app()->getLocale() }}</button>
+                                    data-bs-toggle="dropdown" aria-expanded="false">{{  \Illuminate\Support\Str::upper(app()->getLocale()) }}</button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 @foreach(active_langs() as $lang)
                                     @continue($lang->code == app()->getLocale())

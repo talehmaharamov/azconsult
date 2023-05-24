@@ -1,0 +1,226 @@
+@media only screen and (max-width: 1025px) {
+    .carousel-inner {
+        height: 300px;
+    }
+    .carousel-item{
+        height: 100%;
+    }
+    .carousel-item img{
+        height: 100%;
+    } 
+    .myBox .imgBlog img {
+        width: 130px;
+        height: 130px;
+        object-fit: contain;
+    }
+    .myBox .imgBlog {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .myBox {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    .myBox .textBlog {
+        width: 100%;
+        text-align: center;
+    }
+    .carousel-caption{
+        top: 0rem;
+        left: 0%;
+    }
+    .carousel-caption span {
+        font-size: 13px;
+        font-weight: 300;
+    }
+    .carousel-caption h1 {
+        color: #14203B;
+        font-size: 18px;
+        margin: 5px 0 !important;
+    }
+    .carousel-caption p {
+        color: #14203B;
+        font-size: 14px;
+    }
+    #HomeServices .servicesCard{
+        height: auto;
+    }
+    #Why{
+        display: none;
+    }
+   
+}
+
+
+@media only screen and (max-width: 993px) {
+    .cardBoxBlog{
+        margin: 10px 0;
+    }
+    footer .logoFooter {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    footer .logoFooter img {
+        width: 140px;
+        object-fit: contain;
+        height: 140px;
+        margin-top: 20px;
+    }
+    .stBox{
+        gap: 10px;
+        margin: 20px 0;
+    }
+    #myNavigation{
+        display: none;
+    }
+    #myMobileNavigation{
+        display: block;
+    }
+    .servicesNav .servicesNavBox{
+        padding-bottom: 10px ;
+    }
+    #HomeAbout .leftBox .radiusImg{
+        margin-bottom: 20px;
+    }
+    #HomeAbout .rightBox {
+        text-align: center;
+    }
+    #HomeAbout .rightBox .nameBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    #About {
+        background-color: #F6F7F8;
+        padding-bottom: 10px;
+    }
+    #About .leftBox {
+        margin: 10px 0;
+    }
+    .myRowMobile{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .aboutTextBox{
+        text-align: center;
+    }
+    #Services .servicesCard{
+        height: 350px;
+    }
+    #Contact .contactBox .leftContact {
+        display: flex;
+        align-items: start;
+        height: 100%;
+        flex-direction: column;
+    }
+    #Contact .contactBox .leftContact iframe{
+        position: unset;
+        width: 100%;
+        margin: 20px 0;
+    }
+    #Contact .contactBox{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #Contact .myFormBox{
+        margin-left: 0 ;
+    }
+    #Contact .myFormBox form{
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 568px) {
+    .carousel-inner {
+        height: 300px;
+    }
+    .carousel-item{
+        height: 100%;
+    }
+    .carousel-item img{
+        height: 100%;
+    } 
+    .myBox .imgBlog img {
+        width: 130px;
+        height: 130px;
+        object-fit: contain;
+    }
+    .myBox .imgBlog {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .myBox {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    .myBox .textBlog {
+        width: 100%;
+        text-align: center;
+    }
+    .carousel-caption{
+        top: 0rem;
+        left: 0%;
+    }
+    .carousel-caption span {
+        font-size: 13px;
+        font-weight: 300;
+    }
+    .carousel-caption h1 {
+        color: #14203B;
+        font-size: 18px;
+        margin: 5px 0 !important;
+    }
+    .carousel-caption p {
+        color: #14203B;
+        font-size: 14px;
+    }
+    #HomeServices .servicesCard {
+        height: auto;
+        flex-direction: column;
+    }
+    footer .topBox {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        border-bottom: 1px solid #DCDCDC;
+        padding-bottom: 10px;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+    footer .socialFooter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    #About .leftBox h1 {
+        font-weight: 600;
+        font-size: 38px;
+    }
+    #About .leftBox span {
+        font-size: 18px;
+    }
+    .copy{
+        font-size: 12px;
+        text-align: center;
+        margin-top: 20px;
+        color: #14203B;
+    }
+    #Contact .myFormBox form .nameSurname{
+        display: flex;
+        flex-direction: column;
+    }
+}

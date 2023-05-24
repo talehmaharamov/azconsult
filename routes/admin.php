@@ -21,6 +21,10 @@ Route::group(['middleware' => 'auth:admin', 'as' => 'backend.'], function () {
     Route::get('gallery/photos/{id}/delete', [App\Http\Controllers\Backend\GalleryController::class, 'photosDelete'])->name('gallery.photos.delete');
     Route::post('gallery/{id}/photos/store', [App\Http\Controllers\Backend\GalleryController::class, 'photosStore'])->name('gallery.photos.store');
     Route::group(['name' => 'status'], function () {
+Route::get('who/{id}/change-status',[App\Http\Controllers\Backend\WhoController::class,'status'])->name('whoStatus');
+
+Route::get('who/{id}/change-status',[App\Http\Controllers\Backend\WhoController::class,'status'])->name('whoStatus');
+
 Route::get('faq/{id}/change-status',[App\Http\Controllers\Backend\FaqController::class,'status'])->name('faqStatus');
 
 Route::get('why/{id}/change-status',[App\Http\Controllers\Backend\WhyController::class,'status'])->name('whyStatus');
@@ -59,6 +63,10 @@ Route::get('blog/{id}/change-status',[App\Http\Controllers\Backend\BlogControlle
         Route::get('/useful-link/{id}/change-status', [App\Http\Controllers\Backend\UsefulLinkController::class, 'status'])->name('statusLink');
     });
     Route::group(['name' => 'delete'], function () {
+Route::get('who/{id}/delete',[App\Http\Controllers\Backend\WhoController::class,'delete'])->name('whoDelete');
+
+Route::get('who/{id}/delete',[App\Http\Controllers\Backend\WhoController::class,'delete'])->name('whoDelete');
+
 Route::get('faq/{id}/delete',[App\Http\Controllers\Backend\FaqController::class,'delete'])->name('faqDelete');
 
 Route::get('why/{id}/delete',[App\Http\Controllers\Backend\WhyController::class,'delete'])->name('whyDelete');
@@ -106,6 +114,10 @@ Route::get('blog/{id}/delete',[App\Http\Controllers\Backend\BlogController::clas
         Route::get('/useful-links/{id}/delete', [\App\Http\Controllers\Backend\UsefulLinkController::class, 'delete'])->name('delLinks');
     });
     Route::group(['name' => 'resource'], function () {
+Route::resource('/who',App\Http\Controllers\Backend\WhoController::class);
+
+Route::resource('/who',App\Http\Controllers\Backend\WhoController::class);
+
 Route::resource('/faq',App\Http\Controllers\Backend\FaqController::class);
 
 Route::resource('/why',App\Http\Controllers\Backend\WhyController::class);
