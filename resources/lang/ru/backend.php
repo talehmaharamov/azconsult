@@ -171,4 +171,6 @@
   'statistic' => '',
   'why' => '',
   'faq' => '',
+  'who' => '',
+  'consultation' => '',
 );

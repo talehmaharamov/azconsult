@@ -1,9 +1,7 @@
 <div class="vertical-menu">
     <div data-simplebar class="h-100" style="overflow-y: auto;">
         <div id="sidebar-menu">
-{{--            {{ creation('Statistic','Statistic',true,false) }}--}}
-{{--            {{ creation('Why','Why',true,false) }}--}}
-{{--            {{ creation('Faq','Faq',true,false) }}--}}
+{{--            {{ creation('Who','Who',true,false) }}--}}
 
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li>
