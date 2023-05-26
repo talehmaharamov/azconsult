@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => '/', 'as' => 'frontend.', 'middleware' => 'frontLanguage'], function () {
 
     Route::get('contact-us', function () {
+        $services = \App\Models\Service::where('status', 1)->get();
         return view('frontend.contact-us.index', get_defined_vars());
     })->name('contact-us-page');
     Route::get('/change-language/{dil}', [LChangeLan::class, 'frontLanguage'])->name('frontLanguage');

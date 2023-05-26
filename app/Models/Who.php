@@ -13,7 +13,7 @@ class Who extends Model implements TranslatableContract
 {
     use Translatable, LogsActivity;
 
-    public $translatedAttributes = ['name'];
+    public $translatedAttributes = ['name','description'];
     protected $guarded = [];
     public function getActivitylogOptions(): LogOptions
     {

@@ -15,10 +15,6 @@ class AboutController extends Controller
     public function index()
     {
         $abouts = About::where('status', 1)->get();
-        $cars = Cars::where('status', 1)->get();
-        $sliders = Slider::where('page', 'about')->where('status', 1)->get();
-        $sliderTitle = settings('sliderTitleAbout_' . app()->getLocale());
-        $sliderDescription = settings('sliderDescriptionAbout_' . app()->getLocale());
         return view('frontend.about.index', get_defined_vars());
     }
 }

@@ -51,7 +51,7 @@ class ServiceController extends Controller
     public function edit(string $id)
     {
         check_permission('service edit');
-        $service = Service::where('id', $id)->with('photos')->first();
+        $service = Service::find($id);
         return view('backend.service.edit', get_defined_vars());
     }
 
@@ -59,7 +59,7 @@ class ServiceController extends Controller
     {
         check_permission('service edit');
         try {
-            $service = Service::where('id', $id)->with('photos')->first();
+            $service = Service::find($id);
             DB::transaction(function () use ($request, $service) {
                 if ($request->hasFile('photo')) {
                     if (file_exists($service->photo)) {
