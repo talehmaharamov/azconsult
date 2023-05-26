@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             MetaSeeder::class,
             SettingSeeder::class,
             AdminSeeder::class,
+            ServiceSeeder::class,
         ]);
     }
 }

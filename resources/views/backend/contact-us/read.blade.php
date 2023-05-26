@@ -20,16 +20,15 @@
                                              src="{{asset('backend/images/users/mail.png')}}"
                                              alt="Generic placeholder image">
                                         <div class="flex-1">
-                                            <h5 class="font-size-16 my-1">{{ $message->name}}</h5>
+                                            <h5 class="font-size-16 my-1">{{ $message->name . ' ' . $message->surname}}</h5>
                                             <small> {{ date('d.m.Y H:i:s',strtotime($message->created_at))}}</small>
                                         </div>
                                     </div>
                                     <div>
-                                        <h5>@lang('backend.subject'): {{ $message->subject }}</h5>
                                         <h5>@lang('backend.email'): <a
                                                 href="mailto:{{ $message->email }}">{{ $message->email }}</a></h5>
-                                        <h5>@lang('backend.phone'): <a
-                                                href="tel:{{ $message->phone }}">{{ $message->phone }}</a></h5>
+                                        <h5>@lang('backend.service_type')
+                                            : {{ \App\Models\Service::find($message->service_type)->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</h5>
                                     </div>
                                     <p>
                                         {{ $message->message }}

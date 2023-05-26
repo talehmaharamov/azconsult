@@ -25,27 +25,28 @@
                                                         <label>@lang('backend.name') <span class="text-danger">*</span></label>
                                                         <input name="name[{{ $lan->code }}]" type="text"
                                                                class="form-control"
-                                                               required="" placeholder="@lang('backend.name')">
-                                                        <div class="valid-feedback">
-                                                            @lang('backend.name') @lang('messages.is-correct')
-                                                        </div>
-                                                        <div class="invalid-feedback">
-                                                            @lang('backend.name') @lang('messages.not-correct')
-                                                        </div>
+                                                               required=""
+                                                               value="{{ $blog->translate($lan->code)->name ?? __('backend.translation-not-found') }}">
+                                                        {!! validation_response('backend.name') !!}
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label>@lang('backend.description') <span
+                                                                class="text-danger">*</span></label>
+                                                        <textarea name="description[{{ $lan->code }}]" type="text"
+                                                                  class="form-control" id="elm{{$lan->code}}1"
+                                                                  required="">{!! $blog->translate($lan->code)->description ?? __('backend.translation-not-found') !!}</textarea>
+                                                        {!! validation_response('backend.description') !!}
                                                     </div>
                                                 </div>
                                             </div>
                                         @endforeach
                                         <div class="mb-3">
-                                            <label>@lang('backend.slug') <span class="text-danger">*</span></label>
-                                            <input name="slug" type="text" class="form-control" required
-                                                   placeholder="/news">
-                                            <div class="valid-feedback">
-                                                @lang('backend.slug') @lang('messages.is-correct')
-                                            </div>
-                                            <div class="invalid-feedback">
-                                                @lang('backend.slug') @lang('messages.not-correct')
-                                            </div>
+                                            <label>@lang('backend.photo') <span class="text-danger">*</span></label>
+                                            <input name="photo" type="file"
+                                                   class="form-control">
+                                            @if(file_exists($blog->photo))
+                                                <img class="mt-2 w-100" src="{{ asset($blog->photo) }}">
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

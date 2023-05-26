@@ -228,4 +228,5 @@
   'faq' => '',
   'who' => '',
   'consultation' => '',
+  'service_type' => '',
 );

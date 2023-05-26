@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Category;
 use App\Models\MetaTag;
 use App\Models\Paylasim;
+use App\Models\Service;
 use App\Models\Setting;
 use App\Models\SiteLanguage;
 use Illuminate\Support\Facades\DB;
@@ -26,7 +27,9 @@ class AppServiceProvider extends ServiceProvider
 //        $description = MetaTag::where('attribute_name', 'description')->first();
 //        $settings = Setting::where('status', 1)->get();
 //        $categories = Category::where('status', 1)->get();
-//        view()->share([
+        $services = Service::where('status', 1)->get();
+        view()->share([
+            'services' => $services,
 //            'currentLanguage' => $currentLanguage,
 //            'languages' => $languages,
 //            'locale' => app()->getLocale(),
@@ -34,6 +37,6 @@ class AppServiceProvider extends ServiceProvider
 //            'categories' => $categories,
 //            'tags' => $tags,
 //            'tagDescription' => $description
-//        ]);
+        ]);
     }
 }

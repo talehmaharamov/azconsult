@@ -10,9 +10,9 @@ return new class extends Migration {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('phone');
+            $table->string('surname');
             $table->string('email');
-            $table->string('subject')->nullable();
+            $table->string('service_type');
             $table->longText('message');
             $table->boolean('read_status');
             $table->timestamps();

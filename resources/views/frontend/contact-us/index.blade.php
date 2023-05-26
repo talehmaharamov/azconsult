@@ -14,9 +14,12 @@
                             <a href=""><i
                                     class="fal fa-map-marker-alt"></i>{{ settings('address_'.app()->getLocale()) }}</a>
                             <div class="socialBox">
-                                <a href="mailto:" target="_blank"><i class="fas  fa-envelope"></i></a>
-                                <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="mailto:{{ settings('email') }}" target="_blank"><i
+                                        class="fas  fa-envelope"></i></a>
+                                <a href="{{ settings('facebook') }}" target="_blank"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a href="{{ settings('instagram') }}" target="_blank"><i
+                                        class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -26,37 +29,36 @@
                         <div class="row mb-2">
                             <div class="col-12">
                                 <div class="title">
-                                    <h2>Bizimlə əlaqə</h2>
+                                    <h2>@lang('backend.contact-us')</h2>
                                 </div>
                             </div>
                         </div>
-                        <form action="">
+                        <form action="{{ route('frontend.sendMessage') }}" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="nameSurname">
                                 <div class="inpBox">
                                     <i class="fal fa-user"></i>
-                                    <input type="text" placeholder="Ad" name="" id="">
+                                    <input type="text" placeholder="@lang('backend.name')" name="name" id="">
                                 </div>
                                 <div class="inpBox">
                                     <i class="fal fa-user"></i>
-                                    <input type="text" placeholder="Soyad" name="" id="">
+                                    <input type="text" placeholder="@lang('backend.surname')" name="surname" id="">
                                 </div>
                             </div>
                             <div class="inpBox">
                                 <i class="fal fa-envelope"></i>
-                                <input type="email" placeholder="Email" name="" id="">
+                                <input type="email" placeholder="@lang('backend.email')" name="email" id="">
                             </div>
-                            <select name="" id="">
-                                <option value="" disabled selected>Xidmət Növü</option>
-                                <option value="">Hüquq xidməti</option>
-                                <option value="">Müəssənin yaradılması və ləğvi</option>
-                                <option value="">Maliyyə & Mühasibatlıq</option>
-                                <option value="">Kadr işinin təşkili</option>
-                                <option value="">Miqrasiya Xidməti</option>
-                                <option value="">Mübahisələrin Həlli və Məhkəmələr</option>
-                                <option value="">Digər</option>
+                            <select name="service_type" id="">
+                                <option value="" disabled selected>@lang('backend.service_type')</option>
+                                @foreach($services as $service)
+                                    <option
+                                        value="{{ $service->id }}">{{ $service->translate(app()->getLocale())->name ?? '-' }}</option>
+                                @endforeach
                             </select>
-                            <textarea name="" placeholder="Mesajınız" id="" cols="30" rows="10"></textarea>
-                            <button>Göndər</button>
+                            <textarea name="message" placeholder="@lang('backend.message')" id="" cols="30"
+                                      rows="10"></textarea>
+                            <button>@lang('backend.send')</button>
                         </form>
                     </div>
                 </div>

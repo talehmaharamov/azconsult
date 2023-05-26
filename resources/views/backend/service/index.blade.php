@@ -22,7 +22,7 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>@lang('backend.slug'):</th>
+                                <th>@lang('backend.name'):</th>
                                 <th>@lang('backend.actions'):</th>
                             </tr>
                             </thead>
@@ -30,7 +30,7 @@
                             @foreach($services as $service)
                                 <tr>
                                     <td>{{ $service->id }}</td>
-                                    <td>{{ $service->slug }}</td>
+                                    <td>{{ $service->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</td>
                                     @include('backend.templates.components.dt-settings',['variable' => 'service','value' => $service])
                                 </tr>
                             @endforeach

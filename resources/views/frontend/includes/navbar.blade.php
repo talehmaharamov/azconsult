@@ -17,7 +17,8 @@
                     <div class="rightNav">
                         <div class="dropdown">
                             <button class="dropdown-toggle btn" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">{{  \Illuminate\Support\Str::upper(app()->getLocale()) }}</button>
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">{{  \Illuminate\Support\Str::upper(app()->getLocale()) }}</button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 @foreach(active_langs() as $lang)
                                     @continue($lang->code == app()->getLocale())
@@ -98,4 +99,16 @@
         </ul>
     </nav>
 </section>
-<!-- Burger Menu End -->
+<div class="servicesNav">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="servicesNavBox">
+                    @foreach($services as $service)
+                        <a href="{{ route('frontend.serviceSingle',$service->id) }}">{{ $service->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</a>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
