@@ -8,12 +8,12 @@
                     <div class="leftBox">
                         <h1>Geniş təcrübə və dərin biliklərə əsaslanan</h1>
                         <span>2004-cü ildən hüquq və mühasibat xidmətlərinin göstərilməsi ilə məşğul olan</span>
-                        <strong>Azconsult Azerbaijan MMC</strong>
+                        <strong>@lang('backend.azconsult-aze')</strong>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="positionImg">
-                        <img src="./resources/img/aboutImg.png" alt="">
+                        <img src="{{asset('frontend/img/aboutImg.png')}}" alt="">
                     </div>
                 </div>
             </div>

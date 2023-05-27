@@ -1,26 +1,29 @@
 @extends('master.frontend')
 @section('title',__('backend.services').' | ' )
 @section('front')
-    <section id="Otel">
+    <section id="Servis">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h2> {{ $service->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }} </h2>
+                </div>
+            </div>
+        </div>
+        <div class="imgServisBox">
+            <img src="{{ asset($service->photo) }}" alt="{{ $service->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}">
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="backPage">
-                        <a href="{{ route('frontend.services') }}"><i
-                                class="fal fa-arrow-left"></i>@lang('backend.go-to-back')</a>
+                    <div class="paragraphBox">
+                        <p>{!!$service->translate(app()->getLocale())->descrip ?? __('backend.translation-not-found')  !!}</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                @foreach($service->component()->get() as $key => $component)
-                    <div class="col-12">
-                        <div class="otelCard">
-                            <h4>{{ $key+1 .". ". $component->translate(app()->getLocale())->name ?? '-' }}</h4>
-                            <img src="{{ asset($component->photo) }}" alt="gefen.az">
-                        </div>
+                <div class="col-12">
+                    <div class="sendButton">
+                        <a href="{{ route('frontend.contact-us-page') }}"><button>@lang('backend.apply')</button></a>
                     </div>
-                @endforeach
-
+                </div>
             </div>
         </div>
     </section>

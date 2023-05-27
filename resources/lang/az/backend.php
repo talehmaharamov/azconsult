@@ -1,6 +1,4 @@
-<?php
-
-return array (
+<?php return array (
   'about' => 'Haqqımızda',
   'actions' => 'Hərəkətlər',
   'active' => 'Aktiv',
@@ -26,6 +24,7 @@ return array (
   'are-u-18' => '18 YAŞDAN YUXARISAN?',
   'att' => 'Atribut',
   'att-name' => 'Atribut adı',
+  'azconsult-aze' => 'Azconsult Azerbaijan MMC',
   'back-to-home' => 'Ana səhifəyə qayıt',
   'back_photo' => 'Arxa şəkil',
   'blog' => 'Blog',
@@ -230,4 +229,6 @@ return array (
   'you-have-new-order' => 'Yeni sifarişiniz var',
   'your-item-message' => 'Elanınız nəzərdən keçirilməsini gözləyir.Elanı redaktə etmək və silmək üçün elanın nömrəsini yadda saxlayın.',
   'your-item-number' => 'Elanınızın nömrəsi',
+  2004 => '2004-cü ildən hüquq və mühasibat xidmətlərinin göstərilməsi ilə məşğul olan',
+  'about-consult-main' => 'Geniş təcrübə və dərin biliklərə əsaslanan',
 );
